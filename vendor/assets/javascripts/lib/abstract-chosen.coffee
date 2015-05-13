@@ -229,6 +229,11 @@ class AbstractChosen
           this.result_clear_highlight()
           this.results_search()
       when 13
+        if window.navigator.appName == "Netscape"
+          if this.results_showing
+            this.result_select(evt)
+          else
+            this.results_search()
         evt.preventDefault()
         this.result_select(evt) if this.results_showing
       when 27
